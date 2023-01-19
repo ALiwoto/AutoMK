@@ -46,7 +46,6 @@ namespace AutoMK.WinCore.Mouse
         public const int MOUSEEVENTF_XUP = 0x0200;
         public const int MOUSEEVENTF_ABSOLUTE = 0x8000;
         public const int DEFAULT_WHEEL_AMOUNT = 120;
-        public const int screen_length = 0x10000;
         
         //https://msdn.microsoft.com/en-us/library/windows/desktop/ms646310(v=vs.85).aspx
         [LibraryImport("user32.dll")]

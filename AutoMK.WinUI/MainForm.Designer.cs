@@ -33,27 +33,74 @@ namespace AutoMK.WinUI
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new(0, 0);
+            this.Text = "AutoMK";
+            this.Name = "AutoMK-MainForm";
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.SuspendLayout();
 
             //---------------------------------------------
+            this.FirstToolStrip = new ToolStrip();
+            this.SecondToolStrip = new ToolStrip();
+            this.LeftToolStrip = new ToolStrip();
 
-            var b = new Button();
-            b.Text =  "OK";
-            b.UseVisualStyleBackColor = true;
-            b.Click += (sender, args) =>
+            this.FileDropDownButton = new ToolStripDropDownButton();
+            this.FileNewToolStripButton = new ToolStripButton();
+            this.FileOpenToolStripButton = new ToolStripButton();
+
+            this.EditDropDownButton = new ToolStripDropDownButton();
+
+            this.InsertDropDownButton = new ToolStripDropDownButton();
+
+            this.ToolsDropDownButton = new ToolStripDropDownButton();
+
+            this.HelpDropDownButton = new ToolStripDropDownButton();
+            //---------------------------------------------
+            this.FirstToolStrip.Dock = DockStyle.Top;
+            this.SecondToolStrip.Dock = DockStyle.Top;
+            this.LeftToolStrip.Dock = DockStyle.Left;
+            //---------------------------------------------
+            this.FirstToolStrip.Name = "FirstToolStrip";
+            this.SecondToolStrip.Name = "SecondToolStrip";
+            this.LeftToolStrip.Name = "LeftToolStrip";
+
+            this.FileDropDownButton.Name = "FileDropDownButton";
+
+            this.EditDropDownButton.Name = "EditDropDownButton";
+
+            this.InsertDropDownButton.Name = "InsertDropDownButton";
+
+            this.ToolsDropDownButton.Name = "ToolsDropDownButton";
+            //---------------------------------------------
+            this.FileDropDownButton.Text = "File";
+            //---------------------------------------------
+            //---------------------------------------------
+            this.FirstToolStrip.Items.AddRange(new[]
             {
-                //Keyboard.Press("%{TAB}");
-            };
-            b.Location = new(50, 100);
-            Mouse.MoveToPoint(50, 100);
-
-            this.Controls.AddRange(new[] { b });
+                this.FileDropDownButton,
+            });
 
             //---------------------------------------------
-            this.ResumeLayout(true);
+            //---------------------------------------------
+
+
+            //---------------------------------------------
+            this.Controls.AddRange(new[]
+            {
+                this.LeftToolStrip,
+                this.SecondToolStrip,
+                this.FirstToolStrip,
+            });
+
+            //---------------------------------------------
+            this.FirstToolStrip.ResumeLayout(false);
+            this.FirstToolStrip.PerformLayout();
+            this.SecondToolStrip.ResumeLayout(false);
+            this.SecondToolStrip.PerformLayout();
+            this.LeftToolStrip.ResumeLayout(false);
+            this.LeftToolStrip.PerformLayout();
+
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         #endregion
